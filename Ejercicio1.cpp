@@ -8,14 +8,22 @@ resultado del área calculada.*/
 using namespace std;
 
 double CalcularAreaCircular(double radio){
-	
+	return M_PI * pow(radio, 2);
 }
 
 int main(){
 	double radio, Area;
+	cout << "=======================================" << endl;
+	cout << "       BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "=======================================\n" << endl;
 	
-	cout << "ingrese el radio del circulo" << endl;
+	cout << "Ingrese el radio del circulo:" << endl;
 	cin >> radio;
+	
+	Area = CalcularAreaCircular(radio);
+	
+	cout << "\nEl Area de la circunferencia es: " << Area << endl;
+	cout << "\nGRACIAS POR USAR MI PORGRAMA <3!" << endl;
 	
 	return 0;
 }
