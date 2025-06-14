@@ -10,7 +10,7 @@ using namespace std;
 
 int main(){
 	srand(time(0));
-	int Cantidad, ValorMaximo;
+	int Cantidad, ValorMaximo, numero;
 	
 	
 	cout << "Que cantidad de numeros aleatorios desea generar?" << endl;
@@ -19,7 +19,10 @@ int main(){
 	cout << "Digite el maximo valor que podria tomar un numero" << endl;
 	cin >> ValorMaximo;
 	
-	
+	for(int i= 0; i < Cantidad; i++){
+		numero = rand()% (ValorMaximo + 1);
+		cout << numero << endl;
+	}
 	return 0;	
 }
 
