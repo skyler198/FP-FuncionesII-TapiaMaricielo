@@ -11,14 +11,20 @@ using namespace std;
 int main (){
 	double Cateto1, Cateto2, Hipotenusa;
 	
+	cout << "=====================================" << endl;
+	cout << "      BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "=====================================\n" << endl;
+	
 	cout << "Ingrese el primer cateto de su triangulo" << endl;
 	cin >> Cateto1;
 	
-	cout << "Ingrese el segundo cateto de su triangulo" << endl;
+	cout << "\nIngrese el segundo cateto de su triangulo" << endl;
 	cin >> Cateto2;
 	
 	Hipotenusa = sqrt(pow(Cateto1,2) + pow (Cateto2,2));
 	
-	cout << "La hipotenusa de tu triangulo es: " << Hipotenusa << endl;
+	cout << "\nLa hipotenusa de tu triangulo es: " << Hipotenusa << endl;
+	cout << "\n   GRACIAS POR USAR MI PROGRAMA <3!" << endl;
+	
 	return 0;
 }
