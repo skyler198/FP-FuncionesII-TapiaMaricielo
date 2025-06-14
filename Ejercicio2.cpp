@@ -11,18 +11,22 @@ using namespace std;
 int main(){
 	srand(time(0));
 	int Cantidad, ValorMaximo, numero;
-	
+	cout << "=============================" << endl;
+	cout << "  BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "=============================\n" << endl;
 	
 	cout << "Que cantidad de numeros aleatorios desea generar?" << endl;
 	cin >> Cantidad;
 	
-	cout << "Digite el maximo valor que podria tomar un numero" << endl;
+	cout << "\nDigite el maximo valor que podria tomar un numero:" << endl;
 	cin >> ValorMaximo;
 	
 	for(int i= 0; i < Cantidad; i++){
 		numero = rand()% (ValorMaximo + 1);
-		cout << numero << endl;
+		cout <<" Numero aleatorio "<< (i + 1) <<": " << numero << endl;
 	}
+	
+	cout << "\n GRACIAS POR USAR MI PROGRAMA <3!" << endl;
 	return 0;	
 }
 
