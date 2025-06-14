@@ -17,6 +17,8 @@ int main (){
 	cout << "Ingrese el segundo cateto de su triangulo" << endl;
 	cin >> Cateto2;
 	
+	Hipotenusa = sqrt(pow(Cateto1,2) + pow (Cateto2,2));
 	
+	cout << "La hipotenusa de tu triangulo es: " << Hipotenusa << endl;
 	return 0;
 }
