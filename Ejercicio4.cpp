@@ -11,14 +11,17 @@ using namespace std;
 int main(){
 	int a, b, c;
 	double Raiz1, Raiz2, Discriminante;
+	cout << "==========================================================" << endl;
+	cout << "              BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "==========================================================\n" << endl;
 	
 	cout << "Ingrese el primer coeficiente de su ecuacion cuadratica: " << endl;
 	cin >> a;
 	
-	cout << "Ingrese el segundo coeficiente de su ecuacion cuadratica:" << endl;
+	cout << "\nIngrese el segundo coeficiente de su ecuacion cuadratica:" << endl;
 	cin >> b;
 	
-	cout << "Ingrese el tercer coeficiente de su ecuacion cuadratica:" << endl;
+	cout << "\nIngrese el tercer coeficiente de su ecuacion cuadratica:" << endl;
 	cin >> c;
 	
 	Discriminante = pow(b,2) - (4 * a * c);
@@ -38,14 +41,15 @@ int main(){
 		cout << "La raiz es: " << Raiz1 << endl;
 		
 	} else {
-		cout << "Tu ecuacion tiene dos raices complejas diferentes" << endl;
+		cout << "\nTu ecuacion tiene dos raices complejas diferentes" << endl;
 		
 		Raiz1 = -b / (2 * a);
 		Raiz2 = sqrt(-Discriminante) / (2 * a);
 		
 	cout << "Las raices complejas son: " << Raiz1 << " + " << Raiz2 << "i  y  " << Raiz1 << " - " << Raiz2 << "i" << endl;
-
 	}
+	
+	cout << "\n          GRACIAS POR USAR MI PORGRAMA <3!" << endl;
 	
 	return 0;
 }
