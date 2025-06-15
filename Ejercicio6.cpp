@@ -16,6 +16,10 @@ int main (){
 	string jugadaComp;
 	srand(time(0));
 	
+	cout << "==========================================================" << endl;
+	cout << "              BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "==========================================================\n" << endl;
+	
 	do {
 		cout << "-------menu------" << endl;
 		cout << "\n1. piedra" << endl;
@@ -49,6 +53,16 @@ int main (){
     		cout << "\nOpcion invalida. Intente de nuevo.\n" << endl;
 		}	
 	}while(contadorJ != 3 && contadorC != 3);
+	
+	cout << "\n================== RESULTADO FINAL ==================" << endl;
+    cout << "              Jugador " << contadorJ << " - " << contadorC << " Computadora\n";
 
+    if (contadorJ == 3) {
+        cout << "            Ganaste el juego, FELICIDADES!" << endl;
+    } else {
+        cout << "   La computadora gano el juego, Suerte la proxima!" << endl;
+    }
+	
+	cout << "\n          GRACIAS POR USAR MI PORGRAMA <3!" << endl;
 	return 0;
 }
