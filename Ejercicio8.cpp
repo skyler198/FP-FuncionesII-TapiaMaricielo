@@ -19,6 +19,41 @@ int generarNumero() {
     return rand() % 5 + 1; 
 }
 
+bool tresIguales(int a, int b, int c) {
+    return (a == b && b == c);
+}
+
+
+bool dosIguales(int a, int b, int c) {
+    return (a == b || b == c || a == c);
+}
+
+
+int maximo(int a, int b, int c) {
+    int max = a;
+    if (b > max) max = b;
+    if (c > max) max = c;
+    return max;
+}
+
+
+int minimo(int a, int b, int c) {
+    int min = a;
+    if (b < min) min = b;
+    if (c < min) min = c;
+    return min;
+}
+
+ 
+bool esEscalera(int a, int b, int c) {
+    if (a != b && a != c && b != c) {
+        int maxNum = maximo(a, b, c);
+        int minNum = minimo(a, b, c);
+        return (maxNum - minNum == 2 && (a + b + c == minNum + minNum + 1 + maxNum));
+    }
+    return false;
+}
+
 int main() {
     srand(time(0));
     
@@ -34,7 +69,7 @@ int main() {
     cin >> apuesta;
 
     while (apuesta < 1 || apuesta > 10 || apuesta > monedas) {
-        cout << "Apuesta invalida. Intenta nuevamente: ";
+        cout << "Apuesta invalida, Intenta nuevamente: ";
         cin >> apuesta;
     }
 
@@ -45,9 +80,26 @@ int main() {
 
     cout << "\nSus numeros aleatorios son: \n";
     mostrarNumeros(numero1, numero2, numero3);
+    
+    
+	 if (tresIguales(numero1, numero2, numero3)) {
+        cout << "\nFelicidades! GANASTE 10 veces tu apuesta!" << endl;
+        monedas += apuesta * 9; // recupera su apuesta + gana 9 veces
+    } else if (esEscalera(numero1, numero2, numero3)) {
+        cout << "\nWow! Formaste una escalera! GANASTE 5 veces tu apuesta!" << endl;
+        monedas += apuesta * 4;
+    } else if (dosIguales(numero1, numero2, numero3)) {
+        cout << "\nBien! Hay dos iguales, GANASTE el doble de tu apuesta!" << endl;
+        monedas += apuesta;
+    } else {
+        cout << "\nLo siento! Perdiste tu apuesta" << endl;
+        monedas -= apuesta;
+    }
 
-    //logica de premios pendiente
-    //Menu pendiente
-
+    if (monedas <= 0) {
+        cout << "\nTe has quedado sin monedas. JUEGO TERMINADO." << endl;
+    }
+    cout << "\nTe quedan " << monedas << " monedas." << endl;
+    
     return 0;
 }
