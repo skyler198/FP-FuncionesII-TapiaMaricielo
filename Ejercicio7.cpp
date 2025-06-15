@@ -17,21 +17,49 @@ int lanzarDado(){
 
 int main() {
     srand(time(0));
-    int jugador1, jugador2;
     
-    jugador1 = lanzarDado();
-	jugador2 = lanzarDado();
+    int jugador1, jugador2, ronda = 1;
+    int puntosJ1 = 0, puntosJ2 = 0;
+    
+    while (puntosJ1 < 3 && puntosJ2 < 3){
+    	cout << "\nRONDA NUMERO " << ronda << endl;
+    	
+    	jugador1 = lanzarDado();
+		jugador2 = lanzarDado();
 
-    cout << "Jugador 1 lanzo: " << jugador1 << endl;
-    cout << "Jugador 2 lanzo: " << jugador2 << endl;
+    	cout << "\nJugador 1 lanzo: " << jugador1 << endl;
+    	cout << "Jugador 2 lanzo: " << jugador2 << endl;
 
-    if (jugador1 > jugador2)
-        cout << "Jugador 1 gana la ronda.\n";
-    else if (jugador2 > jugador1)
-        cout << "Jugador 2 gana la ronda.\n";
-    else
-        cout << "Empate!\n";
-
+    	if (jugador1 > jugador2){
+	
+        	cout << "\nJugador 1 gana la ronda.\n";
+        	puntosJ1++;
+        	
+    	}else if (jugador2 > jugador1){
+    		
+        	cout << "\nJugador 2 gana la ronda.\n";
+        	puntosJ2++;
+        	
+    	}else{
+	
+        	cout << "\nEmpate!\n";
+		}
+		
+		cout << "\nMarcador: Jugador 1 = " << puntosJ1 << " | Jugador 2 = " << puntosJ2 << endl;
+        ronda++;
+	}
+	
+    cout << "\n--- Resultado Final ---\n";
+    
+    if (puntosJ1 == 3){
+	
+        cout << "Jugador 1 gana el juego, FELICIDADES!\n";
+        
+    }else{
+    	
+        cout << "Jugador 2 gana el juego, FELICIDADES!\n";
+    }
+    
     return 0;
 }
 
