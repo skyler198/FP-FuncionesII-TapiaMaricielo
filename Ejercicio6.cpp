@@ -23,13 +23,22 @@ int main (){
 		cin >> jugador;
 		
 		int computadora = rand() % 3 + 1;
-		
+			
 		if (jugador >= 1 && jugador <= 3) {
-			//comparar jugadas entre jugador y computadora
+			if (jugador == computadora){
+				cout << "EMPATE!" << endl;
+			}else if ((jugador == 1 && computadora == 3) || (jugador == 2 && computadora == 1) || (jugador == 3 && computadora == 2)){
+				cout << "GANASTE ESTA RONDA!" << endl;
+				contadorJ++;
+			}else {
+				cout << "PERDISTE ESTA RONDA" << endl;
+				contadorC++;
+			}
 		}else{
-    	cout << "Opción inválida. Intente de nuevo." << endl;
-		}
-	}while();
+    		cout << "Opción inválida. Intente de nuevo." << endl;
+		}	
+			
+	}while(contadorJ != 3 && contadorC != 3);
 
 	return 0;
 }
