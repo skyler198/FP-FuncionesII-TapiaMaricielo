@@ -28,7 +28,10 @@ void calcularRaices(double a, double b, double c, double &raiz1, double &raiz2, 
 int main(){
 	double a, b, c, raiz1, raiz2;
 	bool sonReales;
-
+	
+	cout << "==========================================================" << endl;
+	cout << "              BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "==========================================================\n" << endl;
 	
 	cout << "Ingrese el primer coeficiente de su ecuacion cuadratica: " << endl;
 	cin >> a;
@@ -40,12 +43,14 @@ int main(){
 	cin >> c;
 	
 	calcularRaices(a, b, c, raiz1, raiz2, sonReales);
-
+	
 	if (sonReales) {
-    	cout << "\nLas raíces reales son: " << raiz1 << " y " << raiz2 << endl;
+    	cout << "\nLas raices reales son: " << raiz1 << " y " << raiz2 << endl;
 	} else {
-    	cout << "\nLas raíces complejas son: ";
+    	cout << "\nLas raices complejas son: ";
     	cout << raiz1 << " + " << raiz2 << "i  y  " << raiz1 << " - " << raiz2 << "i" << endl;
 	}
+	cout << "\n          GRACIAS POR USAR MI PORGRAMA <3!" << endl;
+
 	return 0;
 }
