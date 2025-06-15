@@ -7,6 +7,7 @@ Muestra el resultado de cada ronda y el marcador acumulado. Usa funciones y núm
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
@@ -20,45 +21,63 @@ int main() {
     
     int jugador1, jugador2, ronda = 1;
     int puntosJ1 = 0, puntosJ2 = 0;
+    string enter;
+    
+    cout << "==========================================================" << endl;
+	cout << "              BIENVENIDO A MI PROGRAMA!" << endl;
+	cout << "==========================================================\n" << endl;
     
     while (puntosJ1 < 3 && puntosJ2 < 3){
-    	cout << "\nRONDA NUMERO " << ronda << endl;
+    	cout << "\n             RONDA NUMERO " << ronda << endl;
+    	
+    	cout << "\nPresiona ENTER para que el Jugador 1 lance...";
+        getline(cin, enter);
     	
     	jugador1 = lanzarDado();
+    	cout << "\nJugador 1 lanzo: " << jugador1 << endl;
+    	cout << "\n+----------------------------------------------+" << endl;
+    	
+    	cout << "\nPresiona ENTER para que el Jugador 2 lance...";
+        getline(cin, enter);
+        
 		jugador2 = lanzarDado();
 
-    	cout << "\nJugador 1 lanzo: " << jugador1 << endl;
-    	cout << "Jugador 2 lanzo: " << jugador2 << endl;
+    	cout << "\nJugador 2 lanzo: " << jugador2 << endl;
 
     	if (jugador1 > jugador2){
-	
-        	cout << "\nJugador 1 gana la ronda.\n";
+			cout << "\n+==========================================+" << endl;
+        	cout << "\n       Jugador 1 GANA la ronda.\n" << endl;
+        	cout << "+==========================================+" << endl;
         	puntosJ1++;
         	
     	}else if (jugador2 > jugador1){
-    		
-        	cout << "\nJugador 2 gana la ronda.\n";
+    		cout << "\n+==========================================+" << endl;
+        	cout << "\n       Jugador 2 GANA la ronda.\n" << endl;
+        	cout << "+==========================================+" << endl;
         	puntosJ2++;
         	
     	}else{
-	
-        	cout << "\nEmpate!\n";
+			cout << "\n+==========================================+" << endl;
+        	cout << "\n                Empate!\n" << endl;
+        	cout << "+==========================================+" << endl;
 		}
 		
 		cout << "\nMarcador: Jugador 1 = " << puntosJ1 << " | Jugador 2 = " << puntosJ2 << endl;
         ronda++;
 	}
 	
-    cout << "\n--- Resultado Final ---\n";
+    cout << "\n----------------- Resultado Final -----------------\n";
     
     if (puntosJ1 == 3){
 	
-        cout << "Jugador 1 gana el juego, FELICIDADES!\n";
+        cout << "        Jugador 1 gana el juego, FELICIDADES!\n";
         
     }else{
     	
-        cout << "Jugador 2 gana el juego, FELICIDADES!\n";
+        cout << "        Jugador 2 gana el juego, FELICIDADES!\n";
     }
+    
+    cout << "\n          GRACIAS POR USAR MI PORGRAMA <3!" << endl;
     
     return 0;
 }
