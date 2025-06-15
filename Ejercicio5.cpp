@@ -12,7 +12,16 @@ using namespace std;
 void calcularRaices(double a, double b, double c, double &raiz1, double &raiz2, bool &sonReales){
 	
 	double discriminante = pow(b, 2) - 4 * a * c;
-
+	
+	if (discriminante >= 0){
+		sonReales = true;
+		
+		raiz1 = (-b + sqrt (discriminante)) / (2 * a);
+		raiz2 = (-b - sqrt (discriminante)) / (2 * a);	
+	} else {
+		raiz1 = -b / (2 * a);
+		raiz2 = sqrt(-discriminante) / (2 * a);	
+	}
 }
 
 
@@ -30,4 +39,13 @@ int main(){
 	cout << "\nIngrese el tercer coeficiente de su ecuacion cuadratica:" << endl;
 	cin >> c;
 	
+	calcularRaices(a, b, c, raiz1, raiz2, sonReales);
+
+	if (sonReales) {
+    	cout << "\nLas raíces reales son: " << raiz1 << " y " << raiz2 << endl;
+	} else {
+    	cout << "\nLas raíces complejas son: ";
+    	cout << raiz1 << " + " << raiz2 << "i  y  " << raiz1 << " - " << raiz2 << "i" << endl;
+	}
+	return 0;
 }
