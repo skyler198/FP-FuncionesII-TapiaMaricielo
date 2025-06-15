@@ -7,37 +7,47 @@ resultado final indicando el ganador del juego.*/
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
+#include<string>
 
 using namespace std;
 
 int main (){
 	int contadorC = 0, contadorJ = 0, jugador, computadora;
+	string jugadaComp;
 	srand(time(0));
 	
 	do {
 		cout << "-------menu------" << endl;
-		cout << "1. piedra" << endl;
+		cout << "\n1. piedra" << endl;
 		cout << "2. papel" << endl;
 		cout << "3. tijera" << endl;
-		cout << "Eliga una opcion:" << endl;
+		cout << "\nEliga una opcion:" << endl;
 		cin >> jugador;
 		
 		int computadora = rand() % 3 + 1;
 			
 		if (jugador >= 1 && jugador <= 3) {
+			
+			switch (computadora) {
+                case 1: jugadaComp = "piedra"; break;
+                case 2: jugadaComp = "papel"; break;
+                case 3: jugadaComp = "tijera"; break;
+            }
+            
+            cout << "\nLa computadora eligio: " << jugadaComp << endl;
+		
 			if (jugador == computadora){
-				cout << "EMPATE!" << endl;
+				cout << "\nEMPATE!\n" << endl;
 			}else if ((jugador == 1 && computadora == 3) || (jugador == 2 && computadora == 1) || (jugador == 3 && computadora == 2)){
-				cout << "GANASTE ESTA RONDA!" << endl;
+				cout << "\nGANASTE ESTA RONDA\n" << endl;
 				contadorJ++;
 			}else {
-				cout << "PERDISTE ESTA RONDA" << endl;
+				cout << "\nPERDISTE ESTA RONDA\n" << endl;
 				contadorC++;
 			}
 		}else{
-    		cout << "Opción inválida. Intente de nuevo." << endl;
+    		cout << "\nOpcion invalida. Intente de nuevo.\n" << endl;
 		}	
-			
 	}while(contadorJ != 3 && contadorC != 3);
 
 	return 0;
